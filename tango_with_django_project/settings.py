@@ -18,10 +18,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
 STATIC_DIR = os.path.join(BASE_DIR, 'static')
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_DIRS = [STATIC_DIR, ]
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+
+STATIC_ROOT = STATIC_DIR
+MEDIA_ROOT = MEDIA_DIR
 
 STATIC_URL = '/static/'
+MEDIA_URL = '/media/'
 
 print()
 print("trace link")
@@ -74,6 +78,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media'
             ],
         },
     },
