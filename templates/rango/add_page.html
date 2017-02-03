@@ -6,7 +6,7 @@
 
     <body>
         <h1>Add a Page to {{ category.name }}</h1>
-        <a href="/rango/">index</a><br />
+        <a href="{% url 'index' %}">index</a><br />
         <div>
             {% if category %}
             <form id="page_form" method="post" action="/rango/category/{{ category.slug }}/add_page/">
